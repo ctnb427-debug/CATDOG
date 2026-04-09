@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pet Feeding Calculator</title>
+
+<style>
+body {font-family: Arial; margin:0; background:#f5f7fb}
+.wrap {max-width:1100px; margin:auto; padding:20px}
+.card {background:white; padding:20px; border-radius:16px; margin-bottom:20px}
+.hero {display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:center}
+.hero img {width:100%; border-radius:16px}
+.products {display:grid; grid-template-columns:1fr 1fr; gap:15px}
+.product {border:1px solid #eee; padding:15px; border-radius:10px}
+.shop {background:#111; color:white; padding:8px 12px; border-radius:6px; text-decoration:none}
+button {width:100%; padding:12px; background:#000; color:#fff; border:none; border-radius:10px; font-size:16px}
+input, select {width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid #ccc}
+@media(max-width:700px){.products,.hero{grid-template-columns:1fr}}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<div class="card hero">
+<div>
+<h1>🐾 Pet Feeding Calculator</h1>
+<p>We’re here to support you and your pets with estimated daily calories and feeding guidance.</p>
+</div>
+<div>
+<img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d">
+</div>
+</div>
+
+<div class="card">
+<label>Pet Type</label>
+<select id="petType">
+<option value="cat">Cat</option>
+<option value="dog">Dog</option>
+</select>
+
+<label>Weight (kg)</label>
+<input id="weight" type="number" value="5">
+
+<label>Goal</label>
+<select id="goal">
+<option value="maintain">Maintain</option>
+<option value="lose">Lose</option>
+<option value="gain">Gain</option>
+</select>
+
+<button onclick="calc()">Calculate</button>
+
+<h2 id="result">Result will show here</h2>
+</div>
+
+<div class="card">
+<h2>Recommended Products</h2>
+
+<div class="products">
+
+<div class="product">
+<h4>🐱 Sensitive Cat Food</h4>
+<a class="shop" href="https://amzn.to/4ss0ZJF" target="_blank">Shop</a>
+</div>
+
+<div class="product">
+<h4>🐱 Wet Cat Food</h4>
+<a class="shop" href="https://amzn.to/4bVS0ve" target="_blank">Shop</a>
+</div>
+
+<div class="product">
+<h4>🐱 Cat Probiotic</h4>
+<a class="shop" href="https://amzn.to/41VbTg0" target="_blank">Shop</a>
+</div>
+
+<div class="product">
+<h4>🐶 Sensitive Dog Food</h4>
+<a class="shop" href="https://amzn.to/4dCa7aJ" target="_blank">Shop</a>
+</div>
+
+<div class="product">
+<h4>🐶 Wet Dog Food</h4>
+<a class="shop" href="https://amzn.to/4mitzvv" target="_blank">Shop</a>
+</div>
+
+<div class="product">
+<h4>🐶 Dog Probiotic</h4>
+<a class="shop" href="https://amzn.to/4tEwvVO" target="_blank">Shop</a>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<h2>🐾 Pet Essentials</h2>
+
+<div class="products">
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1548681528-6a5c45b66b42" style="width:100%; border-radius:10px;">
+<h4>Cat Water Fountain</h4>
+<a class="shop" href="https://amzn.to/48ahkvl" target="_blank">Shop</a>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803" style="width:100%; border-radius:10px;">
+<h4>Cat Feeder with Camera</h4>
+<a class="shop" href="https://amzn.to/4vgVnnY" target="_blank">Shop</a>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b" style="width:100%; border-radius:10px;">
+<h4>Dog Toys</h4>
+<a class="shop" href="https://amzn.to/3OqZUUo" target="_blank">Shop</a>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1517849845537-4d257902454a" style="width:100%; border-radius:10px;">
+<h4>Dog Bed</h4>
+<a class="shop" href="https://amzn.to/4mjsvHO" target="_blank">Shop</a>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+function calc(){
+let w = document.getElementById("weight").value
+let cal = w * 50
+document.getElementById("result").innerText = cal + " calories/day"
+}
+</script>
+
+</body>
+</html>
