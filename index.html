@@ -370,11 +370,19 @@
             <label for="ageMonths">Age (months)</label>
             <input id="ageMonths" type="number" value="24" min="1">
           </div>
+<div>
+  <label for="unitSystem">Units</label>
+  <select id="unitSystem" onchange="updateUnitLabels(); calculate();">
+    <option value="metric" selected>Metric (kg, g, mL)</option>
+    <option value="us">US (lb, oz, cups)</option>
+  </select>
+</div>
 
-          <div>
-            <label for="weightKg">Weight (kg)</label>
-            <input id="weightKg" type="number" step="0.1" value="4.5" min="0.5">
-          </div>
+<div>
+  <label for="weightKg" id="weightLabel">Weight (kg)</label>
+  <input id="weightKg" type="number" step="0.1" value="4.5" min="0.5">
+</div>
+         
 
           <div>
             <label for="sex">Sex</label>
