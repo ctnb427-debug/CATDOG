@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="kcTgtNbim-aIJYTtBA2O4tRLavfRM7BDeSpDGk0iWt8" />
+
+    <!-- SEO: Page Title -->
+    <title>Cat and Dog Food Calculator – Daily Calories, Kibble & Wet Food Guide</title>
+
+    <!-- SEO: Meta Description -->
+    <meta name="description" content="Free cat and dog food calculator. Enter your pet's age, weight, breed, and activity level to get personalized daily calorie, kibble, wet food, and water recommendations." />
+
+    <!-- SEO: Keywords -->
+    <meta name="keywords" content="cat food calculator, dog food calculator, how much to feed my cat, how much to feed my dog, daily calories for cats, daily calories for dogs, pet feeding guide, kibble calculator, wet food calculator, cat nutrition, dog nutrition, pet food portions" />
+
+    <!-- SEO: Author & Robots -->
+    <meta name="author" content="Calm and Simple" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cat and Dog Food Calculator – Free Pet Feeding Guide" />
+    <meta property="og:description" content="How much should you feed your cat or dog? Get a personalized daily calorie, kibble, wet food, and water plan based on age, weight, breed, and activity level." />
+    <meta property="og:url" content="https://ctnb427-debug.github.io/CATDOG/" />
+    <meta property="og:image" content="https://ctnb427-debug.github.io/CATDOG/pets-bg.png" />
+    <meta property="og:site_name" content="Calm and Simple" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cat and Dog Food Calculator – Free Pet Feeding Guide" />
+    <meta name="twitter:description" content="Find out exactly how much to feed your cat or dog. Free calculator using age, weight, breed, activity level, and weight goals." />
+    <meta name="twitter:image" content="https://ctnb427-debug.github.io/CATDOG/pets-bg.png" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ctnb427-debug.github.io/CATDOG/" />
+
+    <!-- Schema: WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Cat and Dog Food Calculator",
+      "description": "Free pet feeding calculator that estimates daily calories, kibble, wet food, and water needs for cats and dogs based on age, weight, breed, activity level, and health goals.",
+      "url": "https://ctnb427-debug.github.io/CATDOG/",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Calm and Simple",
+        "url": "https://calmtools7.gumroad.com"
+      }
+    }
+    </script>
+
+    <!-- Schema: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much should I feed my cat per day?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The amount depends on your cat's age, weight, breed, activity level, and whether they are neutered or indoor. Use our free cat food calculator to get a personalized daily calorie, kibble, and wet food recommendation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much should I feed my dog per day?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dog feeding amounts vary by weight, breed, size class, activity level, and age. Our free dog food calculator gives you a personalized daily calorie and kibble estimate in cups and grams."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate calories for my pet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pet calorie needs are calculated using the Resting Energy Rate (RER) formula adjusted for life stage, breed, activity, sex, and health goals. Our calculator does this automatically — just enter your pet's details."
+          }
+        }
+      ]
+    }
+    </script>
+
+  <style>
+    :root{
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --text:#16202a;
+      --muted:#5f6b7a;
+      --line:#dde5ef;
+      --accent:#1f6feb;
+      --accent-2:#0f172a;
+      --soft:#eef4ff;
+      --good:#eaf8ef;
+      --good-text:#17623a;
+      --warn:#fff8e8;
+      --warn-text:#8a6116;
+      --shadow:0 12px 32px rgba(16,24,40,.08);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#f7f9fc 0%,#eef3f9 100%);
+    }
+
+    .wrap{
+      max-width:1150px;
+      margin:0 auto;
+      padding:28px 18px 50px;
+    }
+   .hero{
+  background:linear-gradient(135deg,#ffffff 0%,#f6faff 100%);
+  border:1px solid var(--line);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  padding:24px;
+  margin-bottom:22px;
+}
+.hero-image{
+  width:100%;
+  max-height:220px;
+  object-fit:cover;
+  display:block;
+  margin-bottom:10px;
+}
+   .badge{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:var(--soft);
+      color:var(--accent);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.2px;
+      margin-bottom:12px;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:clamp(32px,5vw,52px);
+      line-height:1.05;
+    }
+
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.5;
+      max-width:900px;
+    }
+
+    .tabs{
+      display:flex;
+      gap:10px;
+      margin:22px 0 0;
+      flex-wrap:wrap;
+    }
+
+    .tab{
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+      border-radius:14px;
+      padding:12px 18px;
+      font-size:16px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .tab.active{
+      background:var(--accent-2);
+      color:#fff;
+      border-color:var(--accent-2);
+    }
+
+    .grid{
+  display:grid;
+  grid-template-columns:1.2fr .9fr;
+  gap:18px;
+  margin-top:18px;
+}
+   .card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:20px;
+}
+    .card h2{
+      margin:0 0 16px;
+      font-size:24px;
+    }
+
+    .section-title{
+      margin:0 0 14px;
+      font-size:20px;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .full{ grid-column:1 / -1; }
+
+    label{
+      display:block;
+      margin:0 0 7px;
+      font-size:14px;
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    input, select{
+      width:100%;
+      height:48px;
+      border:1px solid #cfd8e3;
+      border-radius:12px;
+      padding:0 14px;
+      font-size:16px;
+      background:#fff;
+    }
+
+    .switch-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 16px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      margin-top:4px;
+      background:#fcfdff;
+    }
+
+    .switch-row label{
+      margin:0;
+      color:var(--text);
+      font-size:16px;
+    }
+
+    .btn{
+      width:100%;
+      border:none;
+      border-radius:14px;
+      background:var(--accent-2);
+      color:#fff;
+      height:52px;
+      font-size:18px;
+      font-weight:700;
+      cursor:pointer;
+      margin-top:16px;
+    }
+
+    .tip{
+      background:#fbfcfe;
+      border:1px dashed #c8d4e3;
+      border-radius:14px;
+      padding:14px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+      margin-top:12px;
+    }
+
+    .results-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .result-box{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+      background:#fff;
+    }
+
+    .result-label{
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:8px;
+      font-weight:700;
+    }
+
+    .result-value{
+      font-size:28px;
+      font-weight:800;
+      line-height:1.1;
+      margin-bottom:6px;
+    }
+
+    .result-note{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.35;
+    }
+
+    .note-card{
+      background:#f6f9ff;
+      border:1px solid #d9e6ff;
+      border-radius:16px;
+      padding:16px;
+      margin-top:14px;
+      color:#233146;
+      line-height:1.5;
+    }
+
+    .aff-card{
+      margin-top:18px;
+      background:linear-gradient(180deg,#f8fcf8 0%,#f1faf1 100%);
+      border:1px solid #d6ecd9;
+    }
+
+    .disclosure{
+      color:var(--good-text);
+      background:var(--good);
+      border-radius:12px;
+      padding:12px 14px;
+      font-size:14px;
+      line-height:1.45;
+      margin-bottom:14px;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+
+    .product{
+      border:1px solid #dfe8f1;
+      border-radius:16px;
+      background:#fff;
+      padding:16px;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#f1f5f9;
+      color:#334155;
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .product h4{
+      margin:0 0 6px;
+      font-size:18px;
+    }
+
+    .product p{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.45;
+      font-size:14px;
+    }
+
+    .shop{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      text-decoration:none;
+      padding:11px 16px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .footer-note{
+      margin-top:18px;
+      font-size:14px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    .seo-block{
+      max-width:900px;
+      margin:32px auto 0;
+      padding:0 18px;
+      color:#5f6b7a;
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    .seo-block h2{
+      color:#16202a;
+      font-size:22px;
+    }
+
+    .seo-block h3{
+      color:#16202a;
+      font-size:18px;
+    }
+
+@media (max-width: 900px){
+  .grid{ grid-template-columns:1fr; }
+}
+
+@media (max-width: 640px){
+  .form-grid, .results-grid{ grid-template-columns:1fr; }
+  .wrap{ padding:14px 12px 30px; }
+  .hero, .card{ padding:16px; }
+}
+
+.free-guide-card{
+  margin-top:18px;
+  padding:26px;
+  background:linear-gradient(135deg,#fff8ef 0%,#eef8f2 100%);
+  border:1px solid #d8cfc4;
+  border-radius:22px;
+  box-shadow:0 12px 30px rgba(16,24,40,.08);
+  text-align:center;
+}
+
+.guide-badge{
+  display:inline-block;
+  background:#4f7c68;
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  padding:7px 12px;
+  border-radius:999px;
+  margin-bottom:12px;
+}
+
+.free-guide-card h3{
+  margin:4px 0 10px;
+  font-size:24px;
+  line-height:1.15;
+  color:#2f4f43;
+}
+
+.free-guide-card p{
+  margin:0 auto 16px;
+  color:#4b5563;
+  font-size:16px;
+  line-height:1.55;
+  max-width:680px;
+}
+
+.guide-list{
+  list-style:none;
+  padding:0;
+  margin:16px auto 22px;
+  max-width:520px;
+  text-align:left;
+  display:grid;
+  gap:9px;
+}
+
+.guide-list li{
+  color:#243447;
+  font-size:15px;
+  line-height:1.35;
+  padding-left:28px;
+  position:relative;
+}
+
+.guide-list li::before{
+  content:"🐾";
+  position:absolute;
+  left:0;
+  top:-1px;
+}
+
+.guide-actions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.guide-btn{
+  display:inline-block;
+  background:#4f7c68;
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  padding:13px 18px;
+  border-radius:999px;
+  box-shadow:0 8px 18px rgba(79,124,104,.24);
+}
+
+.guide-btn:hover{
+  background:#3f6655;
+}
+
+.guide-btn.secondary{
+  background:#ffffff;
+  color:#2f4f43;
+  border:1px solid #b8c9bf;
+  box-shadow:none;
+}
+
+.guide-small{
+  display:block;
+  margin-top:12px;
+  font-size:13px;
+  color:#6b7280;
+}
+
+.problem-links{
+  display:grid;
+  gap:12px;
+  margin-top:12px;
+}
+
+.problem-link{
+  background:#fff;
+  border:1px solid #dfe8f1;
+  border-radius:16px;
+  padding:14px;
+}
+
+.problem-link p{
+  margin:0 0 10px;
+  color:var(--muted);
+  line-height:1.45;
+  font-size:14px;
+}
+
+@media (max-width:640px){
+  .free-guide-card{ padding:20px; }
+  .free-guide-card h3{ font-size:21px; }
+  .guide-actions{ flex-direction:column; }
+  .guide-btn{ width:100%; }
+}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+       <div class="hero">
+       <img src="pets-bg.png" class="hero-image" alt="Cat and dog together — pet feeding calculator">
+      <div class="badge">Pet Feeding Calculator</div>
+      <h1>Cat and Dog Food Calculator</h1>
+      <p class="sub">
+        Estimate daily calories, kibble, wet food, and water needs using age, weight, sex, breed type,
+        activity level, weight goal, and gut sensitivity.
+      </p>
+
+      <div class="tabs">
+        <button class="tab active" id="catTab" onclick="setPetType('cat')">🐱 Cats</button>
+        <button class="tab" id="dogTab" onclick="setPetType('dog')">🐶 Dogs</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2 id="detailsTitle">Cat Details</h2>
+
+        <div class="form-grid">
+          <div>
+            <label for="ageYears">Age (years)</label>
+            <input id="ageYears" type="number" value="2" min="0" step="1" oninput="syncAgeFromYears()">
+          </div>
+          <div>
+            <label for="ageMonths">Age (months)</label>
+            <input id="ageMonths" type="number" value="24" min="1" oninput="syncAgeFromMonths()">
+          </div>
+<div>
+  <label for="unitSystem">Units</label>
+  <select id="unitSystem" onchange="updateUnitLabels(); calculate();">
+    <option value="metric" selected>Metric (kg, g, mL)</option>
+    <option value="us">US (lb, oz, cups)</option>
+  </select>
+</div>
+
+<div>
+  <label for="weightKg" id="weightLabel">Weight (kg)</label>
+  <input id="weightKg" type="number" step="0.1" value="4.5" min="0.5">
+</div>
+         
+
+          <div>
+            <label for="sex">Sex</label>
+            <select id="sex">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="breed">Breed type</label>
+            <select id="breed"></select>
+          </div>
+
+          <div>
+            <label for="activity">Activity level</label>
+            <select id="activity">
+              <option value="low">Low</option>
+              <option value="normal" selected>Normal</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+
+          <div id="sizeWrap" style="display:none;">
+            <label for="sizeClass">Size class</label>
+            <select id="sizeClass">
+              <option value="small">Small</option>
+              <option value="medium" selected>Medium</option>
+              <option value="large">Large</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="goal">Weight goal</label>
+            <select id="goal">
+              <option value="maintain" selected>Maintain</option>
+              <option value="lose">Lose weight</option>
+              <option value="gain">Gain weight</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <label for="gut">Gut sensitivity</label>
+            <select id="gut">
+              <option value="no" selected>None</option>
+              <option value="mild">Mild</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <div class="switch-row">
+              <label for="neutered">Neutered</label>
+              <input id="neutered" type="checkbox" checked style="width:22px;height:22px;">
+            </div>
+
+            <div class="switch-row" id="indoorWrap">
+              <label for="indoor">Indoor</label>
+              <input id="indoor" type="checkbox" checked style="width:22px;height:22px;">
+            </div>
+          </div>
+
+          <div class="full">
+            <h3 class="section-title">Food Settings</h3>
+          </div>
+
+          <div>
+            <label for="dryFraction">Dry food fraction (0 to 1)</label>
+            <input id="dryFraction" type="number" step="0.1" value="0.5" min="0" max="1">
+          </div>
+
+          <div>
+            <label for="kibbleKcalPerCup">Kibble kcal per cup</label>
+            <input id="kibbleKcalPerCup" type="number" value="400" min="1">
+          </div>
+
+          <div class="full">
+            <label for="wetKcalPer100g">Wet food kcal per 100 g</label>
+            <input id="wetKcalPer100g" type="number" value="90" min="1">
+          </div>
+        </div>
+
+<button class="btn" onclick="calculate()">Calculate</button>
+
+<div class="tip" id="tipText">
+  Tip: check your pet food label. Brands vary a lot, so adjusting the calorie values makes the calculator more accurate.
+</div>
+
+<div class="free-guide-card" id="free-guide">
+  <div class="guide-badge">FREE PET CARE DOWNLOADS</div>
+
+  <h3>Healthy Homemade Pet Treats & Feeding Guides</h3>
+
+  <p>
+    Get simple recipes, safe food lists, tummy-friendly tips, and easy printable trackers
+    to help keep your cat or dog happy, healthy, and well-fed.
+  </p>
+
+  <ul class="guide-list">
+    <li>Healthy homemade pet treat ideas</li>
+    <li>Safe and unsafe foods for cats and dogs</li>
+    <li>Sensitive tummy and hydration tips</li>
+    <li>Printable daily feeding and wellness tracker</li>
+  </ul>
+
+  <div class="guide-actions">
+    <a href="https://forms.gle/VU2vFwS6Qtu7TtTt7" target="_blank" rel="noopener noreferrer" class="guide-btn">
+      Get My Free Guide
+    </a>
+
+    <a href="Healthy_Homemade_Pet_Treats_Guide.pdf" target="_blank" rel="noopener noreferrer" class="guide-btn secondary">
+      View Treat Guide
+    </a>
+
+    <a href="pet_feeding_cheatsheet.pdf" target="_blank" rel="noopener noreferrer" class="guide-btn secondary">
+      View Feeding Cheat Sheet
+    </a>
+  </div>
+
+  <span class="guide-small">
+    Tip: upload both PDF files into the same GitHub folder as this index.html file so these buttons open correctly.
+  </span>
+</div>
+</div>
+
+<div>
+  <div class="card">
+    <h2>Results</h2>
+                   <div class="results-grid">
+            <div class="result-box">
+              <div class="result-label">Daily calories</div>
+              <div class="result-value" id="caloriesOut">267 kcal</div>
+              <div class="result-note">Estimated starting point</div>
+            </div>
+
+            <div class="result-box">
+              <div class="result-label">Kibble</div>
+              <div class="result-value" id="kibbleOut">0.33 cups</div>
+              <div class="result-note" id="kibbleNote">About 33 g/day</div>
+            </div>
+
+            <div class="result-box">
+              <div class="result-label">Wet food</div>
+              <div class="result-value" id="wetOut">148 g</div>
+              <div class="result-note" id="wetNote">Recommended wet share 50%</div>
+            </div>
+
+            <div class="result-box">
+              <div class="result-label">Water</div>
+              <div class="result-value" id="waterOut">210 mL</div>
+              <div class="result-note">Approximate daily drinking target</div>
+            </div>
+          </div>
+
+          <div class="note-card" id="feedingNote">
+            <strong>Feeding note:</strong> Standard feeding split.
+          </div>
+        </div>
+
+        <div class="card aff-card">
+          <h2>Recommended Products</h2>
+
+          <div class="disclosure">
+            As an Amazon Associate, this site may earn from qualifying purchases. These product links are optional and are provided as helpful ideas for common pet care needs.
+          </div>
+
+          <div class="products" id="products"></div>
+
+          <h3 style="margin-top:18px;">🐾 Fix Common Pet Problems</h3>
+
+          <div class="problem-links">
+            <div class="problem-link">
+              <p><strong>Cat not drinking enough water?</strong><br>A pet fountain can encourage better hydration.</p>
+              <a class="shop" href="https://amzn.to/4moT9z4" target="_blank" rel="noopener noreferrer">View fountain</a>
+            </div>
+
+            <div class="problem-link">
+              <p><strong>Dog chewing everything?</strong><br>A safer chew toy can redirect destructive chewing.</p>
+              <a class="shop" href="https://amzn.to/4cdVO9X" target="_blank" rel="noopener noreferrer">View chew option</a>
+            </div>
+
+            <div class="problem-link">
+              <p><strong>Training treats that actually work?</strong><br>Small treats can be helpful for quick reward-based training.</p>
+              <a class="shop" href="https://amzn.to/4volCZR" target="_blank" rel="noopener noreferrer">View treats</a>
+            </div>
+
+            <div class="problem-link">
+              <p><strong>Shedding everywhere?</strong><br>A good brush can help reduce loose hair around the home.</p>
+              <a class="shop" href="https://amzn.to/4t9PZSg" target="_blank" rel="noopener noreferrer">View brush</a>
+            </div>
+          </div>
+
+          <div class="footer-note">
+            These results are estimates only. Real feeding needs can change based on health, body condition,
+            pregnancy, nursing, temperature, and the exact calorie content of the food.
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- SEO Content Block -->
+  <div class="seo-block">
+    <h2>How Much Should You Feed Your Cat or Dog?</h2>
+    <p>Feeding your pet the right amount is one of the most important things you can do for their long-term health. Too much food leads to obesity, joint problems, and a shorter lifespan. Too little can cause nutritional deficiencies and low energy. This free <strong>cat and dog food calculator</strong> takes the guesswork out of pet feeding and pairs with our printable homemade pet treats guide and pet feeding cheat sheet.</p>
+
+    <h3>What This Calculator Uses</h3>
+    <p>Our calculator uses the scientifically recognized <strong>Resting Energy Rate (RER)</strong> formula, adjusted for your pet's life stage, breed, sex, activity level, and weight goal. It estimates daily calories, kibble in cups and grams, wet food in grams, and a daily water intake target.</p>
+
+    <h3>Cat Feeding Guide</h3>
+    <p>Adult cats typically need between 200 and 350 calories per day depending on weight and activity. Indoor neutered cats need fewer calories than outdoor or unneutered cats. Breeds like Bengal and Sphynx tend to have higher energy needs than Persian or British Shorthair cats.</p>
+
+    <h3>Dog Feeding Guide</h3>
+    <p>Dogs vary widely — a Chihuahua and a Great Dane have very different calorie needs. Large breeds, working dogs, and highly active dogs need significantly more food than small or low-activity dogs. Always adjust based on your dog's body condition score, not just the number on the bag.</p>
+
+    <p style="margin-top:20px;"><em>These results are estimates only. Always consult your veterinarian for pets with health conditions, pregnancy, or special dietary needs.</em></p>
+  </div>
+
+  </div><!-- end .wrap -->
+
+  <script>
+    let petType = "cat";
+
+    const CAT_BREEDS = {
+      "domestic": 1.00,
+      "maine coon": 1.15,
+      "rex": 0.95,
+      "cornish rex": 0.95,
+      "devon rex": 0.95,
+      "siamese": 1.05,
+      "bengal": 1.10,
+      "persian": 0.95,
+      "sphynx": 1.12,
+      "ragdoll": 1.05,
+      "norwegian forest cat": 1.10,
+      "british shorthair": 0.97
+    };
+
+    const DOG_BREEDS = {
+      "mixed": 1.00,
+      "labrador": 1.05,
+      "golden retriever": 1.05,
+      "poodle": 1.00,
+      "chihuahua": 0.95,
+      "german shepherd": 1.08,
+      "husky": 1.12,
+      "beagle": 1.00,
+      "bulldog": 0.92,
+      "boxer": 1.05,
+      "great dane": 1.10
+    };
+
+    const ACTIVITY = {
+      low: 0.90,
+      normal: 1.00,
+      high: 1.12
+    };
+
+    const GOALS = {
+      maintain: 1.00,
+      lose: 0.85,
+      gain: 1.12
+    };
+
+    const PRODUCTS = {
+      cat: {
+        maintain: [
+          { title:"Sensitive Cat Food", tag:"Sensitive digestion", blurb:"Gentler formula idea for cats with tummy issues.", href:"https://amzn.to/4ss0ZJF", cta:"Shop cat food" },
+          { title:"Wet Cat Food", tag:"Moisture support", blurb:"Adds moisture and supports a mixed feeding plan.", href:"https://amzn.to/4bVS0ve", cta:"Shop wet food" },
+          { title:"Cat Probiotic", tag:"Gut support", blurb:"A digestive support add-on many cat owners look for.", href:"https://amzn.to/41VbTg0", cta:"Shop probiotic" }
+        ],
+        lose: [
+          { title:"Sensitive Cat Food", tag:"Weight support", blurb:"A good place to start when you want portions to feel more controlled.", href:"https://amzn.to/4ss0ZJF", cta:"Shop cat food" },
+          { title:"Wet Cat Food", tag:"Portion help", blurb:"Wet food can help increase moisture while keeping meals satisfying.", href:"https://amzn.to/4bVS0ve", cta:"Shop wet food" },
+          { title:"Cat Probiotic", tag:"Gut support", blurb:"Helpful when changing routines and trying gentler feeding options.", href:"https://amzn.to/41VbTg0", cta:"Shop probiotic" }
+        ],
+        gain: [
+          { title:"Sensitive Cat Food", tag:"Extra calories", blurb:"A practical product choice for cats needing a richer daily intake.", href:"https://amzn.to/4ss0ZJF", cta:"Shop cat food" },
+          { title:"Wet Cat Food", tag:"Protein boost", blurb:"Moist, easy-to-eat option that works well in mixed feeding.", href:"https://amzn.to/4bVS0ve", cta:"Shop wet food" },
+          { title:"Cat Probiotic", tag:"Gut support", blurb:"Helpful for sensitive tummies during feeding changes.", href:"https://amzn.to/41VbTg0", cta:"Shop probiotic" }
+        ]
+      },
+      dog: {
+        maintain: [
+          { title:"Sensitive Dog Food", tag:"Sensitive digestion", blurb:"A gentle starting point for dogs with tummy issues.", href:"https://amzn.to/4dCa7aJ", cta:"Shop dog food" },
+          { title:"Wet Dog Food", tag:"Moisture support", blurb:"Adds moisture and can make meals more appealing.", href:"https://amzn.to/4mitzvv", cta:"Shop wet food" },
+          { title:"Dog Probiotic", tag:"Gut support", blurb:"Digestive support that many dog owners consider useful.", href:"https://amzn.to/4tEwvVO", cta:"Shop probiotic" }
+        ],
+        lose: [
+          { title:"Sensitive Dog Food", tag:"Weight support", blurb:"A practical option when trying to manage portions.", href:"https://amzn.to/4dCa7aJ", cta:"Shop dog food" },
+          { title:"Wet Dog Food", tag:"Meal support", blurb:"Can help with meal satisfaction while keeping moisture higher.", href:"https://amzn.to/4mitzvv", cta:"Shop wet food" },
+          { title:"Dog Probiotic", tag:"Gut support", blurb:"Useful when changing food routines for a sensitive dog.", href:"https://amzn.to/4tEwvVO", cta:"Shop probiotic" }
+        ],
+        gain: [
+          { title:"Sensitive Dog Food", tag:"Extra calories", blurb:"A good starting choice when your dog needs more intake.", href:"https://amzn.to/4dCa7aJ", cta:"Shop dog food" },
+          { title:"Wet Dog Food", tag:"Protein boost", blurb:"Can help add more calorie density and variety.", href:"https://amzn.to/4mitzvv", cta:"Shop wet food" },
+          { title:"Dog Probiotic", tag:"Gut support", blurb:"A nice add-on for digestion when increasing food.", href:"https://amzn.to/4tEwvVO", cta:"Shop probiotic" }
+        ]
+      }
+    };
+
+    function syncAgeFromYears() {
+      const years = Number(document.getElementById("ageYears").value) || 0;
+      document.getElementById("ageMonths").value = Math.round(years * 12);
+      calculate();
+    }
+
+    function syncAgeFromMonths() {
+      const months = Number(document.getElementById("ageMonths").value) || 0;
+      document.getElementById("ageYears").value = (months / 12).toFixed(1);
+      calculate();
+    }
+
+    function rer(weightKg) {
+      return 70 * Math.pow(weightKg, 0.75);
+    }
+
+    function sexFactor(sex) {
+      return sex === "male" ? 1.03 : 1.00;
+    }
+
+    function catLifeStageFactor(ageMonths, neutered, indoor) {
+      if (ageMonths < 4) return 2.5;
+      if (ageMonths < 12) return 2.0;
+      let factor = neutered ? 1.15 : 1.25;
+      if (indoor) factor *= 0.95;
+      return factor;
+    }
+
+    function dogLifeStageFactor(ageMonths, neutered, sizeClass) {
+      if (ageMonths < 4) return 3.0;
+      if (ageMonths < 12) return 2.0;
+
+      let factor = neutered ? 1.55 : 1.75;
+
+      if (sizeClass === "small") factor *= 0.98;
+      if (sizeClass === "large") factor *= 1.05;
+
+      return factor;
+    }
+
+    function gutAdjustment(gut, wetFraction) {
+      if (gut === "mild") return { calories: 0.98, wetBoost: Math.max(wetFraction, 0.55), note: "Mild gut sensitivity selected. A slightly gentler feeding plan is suggested." };
+      if (gut === "high") return { calories: 0.95, wetBoost: Math.max(wetFraction, 0.65), note: "High gut sensitivity selected. A gentler, wetter feeding split is suggested." };
+      return { calories: 1.0, wetBoost: wetFraction, note: "Standard feeding split." };
+    }
+
+    function cupsToGrams(cups, animalType) {
+      return animalType === "cat" ? cups * 100 : cups * 110;
+    }
+
+    function populateBreedOptions() {
+      const breedSelect = document.getElementById("breed");
+      breedSelect.innerHTML = "";
+
+      const source = petType === "cat" ? CAT_BREEDS : DOG_BREEDS;
+      Object.keys(source).forEach(name => {
+        const opt = document.createElement("option");
+        opt.value = name;
+        opt.textContent = name.replace(/\b\w/g, c => c.toUpperCase());
+        breedSelect.appendChild(opt);
+      });
+    }
+
+    function setPetType(type) {
+      petType = type;
+
+      document.getElementById("catTab").classList.toggle("active", type === "cat");
+      document.getElementById("dogTab").classList.toggle("active", type === "dog");
+
+      document.getElementById("detailsTitle").textContent = type === "cat" ? "Cat Details" : "Dog Details";
+      document.getElementById("sizeWrap").style.display = type === "dog" ? "block" : "none";
+      document.getElementById("indoorWrap").style.display = type === "cat" ? "flex" : "none";
+
+      document.getElementById("kibbleKcalPerCup").value = type === "cat" ? 400 : 380;
+      document.getElementById("wetKcalPer100g").value = type === "cat" ? 90 : 110;
+      document.getElementById("tipText").textContent = type === "cat"
+        ? "Tip: cats often do well with more moisture in the diet. Check your wet food calories per 100 g."
+        : "Tip: dogs vary a lot by breed and size, so changing the food calorie values makes this estimate more useful.";
+
+      populateBreedOptions();
+      calculate();
+    }
+
+    function renderProducts(goal) {
+      const holder = document.getElementById("products");
+      const items = PRODUCTS[petType][goal] || [];
+      holder.innerHTML = "";
+
+      items.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "product";
+        div.innerHTML = `
+          <div class="tag">${item.tag}</div>
+          <h4>${item.title}</h4>
+          <p>${item.blurb}</p>
+          <a class="shop" href="${item.href}" target="_blank" rel="noopener noreferrer">${item.cta}</a>
+        `;
+        holder.appendChild(div);
+      });
+    }
+
+    function calculate() {
+      const ageMonths = Number(document.getElementById("ageMonths").value) || 24;
+      const weightKg = Number(document.getElementById("weightKg").value) || (petType === "cat" ? 4.5 : 15);
+      const sex = document.getElementById("sex").value;
+      const breed = document.getElementById("breed").value;
+      const activity = document.getElementById("activity").value;
+      const sizeClass = document.getElementById("sizeClass").value;
+      const goal = document.getElementById("goal").value;
+      const gut = document.getElementById("gut").value;
+      const neutered = document.getElementById("neutered").checked;
+      const indoor = document.getElementById("indoor").checked;
+
+      let dryFractionInput = Number(document.getElementById("dryFraction").value);
+      if (isNaN(dryFractionInput)) dryFractionInput = 0.5;
+      dryFractionInput = Math.max(0, Math.min(1, dryFractionInput));
+
+      const kibbleKcalPerCup = Number(document.getElementById("kibbleKcalPerCup").value) || (petType === "cat" ? 400 : 380);
+      const wetKcalPer100g = Number(document.getElementById("wetKcalPer100g").value) || (petType === "cat" ? 90 : 110);
+
+      const breedFactor = (petType === "cat" ? CAT_BREEDS[breed] : DOG_BREEDS[breed]) || 1.0;
+      const activityFactor = ACTIVITY[activity] || 1.0;
+      const goalFactor = GOALS[goal] || 1.0;
+
+      let baseCalories;
+      if (petType === "cat") {
+        baseCalories = rer(weightKg) * catLifeStageFactor(ageMonths, neutered, indoor) * breedFactor * activityFactor * sexFactor(sex) * goalFactor;
+      } else {
+        baseCalories = rer(weightKg) * dogLifeStageFactor(ageMonths, neutered, sizeClass) * breedFactor * activityFactor * sexFactor(sex) * goalFactor;
+      }
+
+      let wetFraction = 1 - dryFractionInput;
+      const gutAdj = gutAdjustment(gut, wetFraction);
+
+      wetFraction = gutAdj.wetBoost;
+      const dryFraction = 1 - wetFraction;
+
+      const calories = Math.round(baseCalories * gutAdj.calories);
+      const dryCalories = calories * dryFraction;
+      const wetCalories = calories * wetFraction;
+
+      const kibbleCups = dryCalories / kibbleKcalPerCup;
+      const kibbleGrams = cupsToGrams(kibbleCups, petType);
+      const wetGrams = (wetCalories / wetKcalPer100g) * 100;
+
+      const waterMl = petType === "cat"
+        ? Math.round(weightKg * 50)
+        : Math.round(weightKg * 55);
+
+      document.getElementById("caloriesOut").textContent = `${calories} kcal`;
+      document.getElementById("kibbleOut").textContent = `${kibbleCups.toFixed(2)} cups`;
+      document.getElementById("kibbleNote").textContent = `About ${Math.round(kibbleGrams)} g/day`;
+      document.getElementById("wetOut").textContent = `${Math.round(wetGrams)} g`;
+      document.getElementById("wetNote").textContent = `Recommended wet share ${Math.round(wetFraction * 100)}%`;
+      document.getElementById("waterOut").textContent = `${waterMl} mL`;
+
+      let feedingText = gutAdj.note;
+      if (goal === "lose") feedingText += " For weight loss, recheck body condition regularly and avoid large treats.";
+      if (goal === "gain") feedingText += " For weight gain, increase gradually and monitor stool tolerance.";
+      if (goal === "maintain") feedingText += " Use this as a starting point and adjust based on body condition.";
+
+      document.getElementById("feedingNote").innerHTML = `<strong>Feeding note:</strong> ${feedingText}`;
+
+      renderProducts(goal);
+    }
+
+    populateBreedOptions();
+    calculate();
+  </script>
+</body>
+</html>
